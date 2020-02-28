@@ -65,13 +65,8 @@ public class SimpleList
 		
 			list2[0] = n;
 			
+			// Pass the reference of the bigger array back to the initial reference "list"
 			list = list2; 
-		}
-		
-		// This will account in the case that the list has already been full before
-		else if (track == true) 
-		{
-			System.out.println("TBD");
 		}
 		
 		// This will handle the first the inputs of the list only 
@@ -98,7 +93,6 @@ public class SimpleList
 		
 			// Keep track every time an element is added to the array. 
 			count++;	
-			System.out.println(count);
 	}
 	
 	public void remove (int n) 
