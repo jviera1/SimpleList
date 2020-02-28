@@ -1,9 +1,15 @@
 package cse360assign2;
 
+import java.util.ArrayList;
+
 public class SimpleList 
 {
 	private  int count;  
-	private int list[]; 
+	private boolean track;						// use this to keep track of the first time you input more than 10 integers to the list  
+	private int list[];
+	private ArrayList<Integer> arrayList; 
+	private int list2[];
+	public int size; 
 	public int num; 
 	
 	public SimpleList() 
@@ -11,31 +17,67 @@ public class SimpleList
 		// Define variables in the constructor 
 		count = 0; 
 		list = new int [10]; 
+		track = false; 
+		size = 0; 
 		num = 0;
 	}
 	
 	public  void add(int n) 
 	{
-		// If the list is empty, add it in the first index
-		if(list[0] == 0 && count == 0) 
-		{
-			list[0] = n; 
-		}
 		
-		// If the list is not empty, shift all the elements to the left and 
-		// place the input in the first index of that array. 
-		else 
+		
+		// If the list is already full, increase its size by 50% 
+		if(count >= 10) 
 		{
-			for(int i = list.length-2; i >= 0; i--) 
-			{
-				list[i+1] = list[i]; 
-			}
+			track = true; 
 			
-			list[0] = n;
+			// Set the size of arrayList
+			list2 = new int[list.length + list.length/2];
+				
+			// Traverse through list, add everything to list2 			   
+		    for(int i = 0; i<list.length-1; i++) 
+		    {
+		    	list2[i] = list[i];
+		    }
+		    
+			// Now add something into the new array. 
+		    for(int i = list2.length-2; i >= 0; i--) 
+			{
+				list2[i+1] = list2[i]; 
+			}
+		
+			list2[0] = n;
+		    
+			
+	
+			for(int i =0; i<list2.length; i++) 
+			{
+				System.out.print(list2[i]);
+			}
 		}
 		
-		// Keep track every time an element is added to the array. 
-		count++;
+
+			// If the list is empty, add it in the first index
+			if(list[0] == 0 && count == 0) 
+			{
+				list[0] = n; 
+			}
+		
+			// If the list is not empty, shift all the elements to the left and 
+			// place the input in the first index of that array. 
+			else 
+			{
+				for(int i = list.length-2; i >= 0; i--) 
+				{
+					list[i+1] = list[i]; 
+				}
+			
+				list[0] = n;
+			}
+		
+			// Keep track every time an element is added to the array. 
+			count++;	
+			System.out.println(count);
 	}
 	
 	public void remove (int n) 
@@ -83,10 +125,10 @@ public class SimpleList
 	public int count() 
 	{
 		// If add() is used consecutively more than 10 times, count shouldn't exceed 10
-		if(count>=10) 
+		/*if(count>=10) 
 		{
 			count = 10; 
-		}
+		}*/
 		// If remove() is used consecutively more that 10 times, count shouldn't be less that 0
 		if (count<=0) 
 		{
@@ -144,13 +186,17 @@ public class SimpleList
 	// display the array as it is right now (not used in Junit testing
 	public void display() 
 	{
-		System.out.println("Here is the arrray now: "); 
-		for(int i = 0; i<list.length; i++) 
-		{
-			System.out.print(list[i]);
-		}
+		System.out.println("Here is the array now: "); 
+			
+			for(int i = 0; i<list.length; i++) 
 		
-		System.out.println("\n");
+			{
+				System.out.print(list[i]);
+			}
+			
+			System.out.println("\n");
+		
+		
 	}
 	
 	

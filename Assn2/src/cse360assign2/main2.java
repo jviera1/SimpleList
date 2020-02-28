@@ -21,7 +21,6 @@ public class main2
 			System.out.println("3 - Count the number of elements in the list"); 
 			System.out.println("4 - toString");  
 			System.out.println("5 - Search for a number in the list"); 
-			System.out.println("hello there");
 			
 			System.out.println("Enter your choice:");
 			option = scan.nextInt(); 
