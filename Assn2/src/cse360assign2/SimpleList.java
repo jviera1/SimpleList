@@ -241,10 +241,43 @@ public class SimpleList
 		System.out.println("\n");
 	}
 	
+	// append user input to the very end of the array 
+	public void append(int app) 
+	{
+		if(list[0]==0)
+		{
+			list[0] = app; 
+		}
+		else 
+		{
+			list[list.length-1] = app; 
+		}
+	}
+	
+	
+	
+	// return the first index of the array 
+	public int first() 
+	{
+		if(list[0] != 0) 
+		{
+			return list[0]; 
+		}
+		return -1; 
+	}
 	
 	// return the last index of the array
-	public int lastIndex() 
+	public int last() 
 	{
+		if(list[0]!=0) 
+		{
 		return list[list.length-1];
+		}
+		return -1; 
+	}
+	
+	public int size() 
+	{
+		return list.length;
 	}
 }
