@@ -35,7 +35,7 @@ public class SimpleList
 		num = 0;
 	}
 	
-	public  void add(int n) 
+	public void add(int n) 
 	{
 		// If the list is already full, increase its size by 50% 
 		// This will only account for the first time the list is full 
