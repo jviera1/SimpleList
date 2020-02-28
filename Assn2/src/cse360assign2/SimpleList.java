@@ -4,11 +4,12 @@
  *
  * 
  * Description: 
- * This program creates an array of 10 integers. It contains five methods that will manipulate the array in different ways. The add() method will add 
+ * This program creates an array of 10 integers. It contains 6 methods that will manipulate the array in different ways. The add() method will add 
  * elements to the array while increasing the size of the array once it is full. The remove() method will accept an integer as an input and remove all the instances
  * of that integer from the array, and shift all the values to the left of the array. If the array is more than 25% empty, then it will reduce the size of the array. 
  * The toString() method converts the integer array into a single string.The count() method is used to keep track of the total elements in the array. The search() 
- * method searched for an element in the array and returns the index where that value is stored. The lastIndex() method returns the last element in the array. 
+ * method searched for an element in the array and returns the index where that value is stored. The last() method returns the last element in the array. The first() 
+ * method returns the first element of the array. The size() method returns the size of the array. The append() method appends an integer to the end of the array.  
  */
 
 
