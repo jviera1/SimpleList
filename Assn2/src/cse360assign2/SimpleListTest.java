@@ -29,7 +29,7 @@ class SimpleListTest {
 		 ref.add(12);
 		 
 		 assertTrue(ref.count() == 10);
-		 assertTrue(ref.lastIndex()==3); 
+		 assertTrue(ref.last()==3); 
 	}
 	
 	@Test 
