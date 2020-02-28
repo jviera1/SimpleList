@@ -69,7 +69,7 @@ public class SimpleList
 			list = list2; 
 		}
 		
-		// This will handle the first the inputs of the list only 
+		// This will handle the first ten inputs of the list only 
 		else 
 		{
 			// If the list is empty, add it in the first index
@@ -96,7 +96,8 @@ public class SimpleList
 	}
 	
 	public void remove (int n) 
-	{
+	{	
+		int spaces = 0; 
 		// if the number is at the front of the list 
 		if(list[0] == n) 
 		{
@@ -124,8 +125,7 @@ public class SimpleList
 			}
 		}
 		
-		// Fix the spacing in the array
-		
+		// Fix the spacing in the array 
 		for(int i = 0; i < list.length-2; i++) 
 		{
 			if(list[i] == 0) 
@@ -133,6 +133,29 @@ public class SimpleList
 				list[i] = list[i+1];
 				list[i+1]=0;
 			}
+		}
+		
+		for(int i = 0; i<list.length-1; i++) 
+		{
+			if(list[i] == 0) 
+			{
+				spaces++; 
+			}
+		}
+		
+		if(100*(spaces / count) >= 25) 
+		{
+			// decrease the size of the array
+			list2 = new int[list.length-1];
+			
+			// Traverse through list, add everything to list2 			   
+			for(int i = 0; i<list.length; i++) 
+			{
+				list2[i] = list[i];
+			}
+			
+			// Pass the reference of the bigger array back to the initial reference "list"
+			list = list2;
 		}
 	}
 	
