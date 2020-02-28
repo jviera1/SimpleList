@@ -97,7 +97,8 @@ public class SimpleList
 	
 	public void remove (int n) 
 	{	
-		int spaces = 0; 
+		int spaces = 0;
+		
 		// if the number is at the front of the list 
 		if(list[0] == n) 
 		{
@@ -135,6 +136,7 @@ public class SimpleList
 			}
 		}
 		
+		// 
 		for(int i = 0; i<list.length-1; i++) 
 		{
 			if(list[i] == 0) 
@@ -143,13 +145,13 @@ public class SimpleList
 			}
 		}
 		
-		if(100*(spaces / count) >= 25) 
+		if(100*((double)spaces / (double)count) >= 25) 
 		{
 			// decrease the size of the array
 			list2 = new int[list.length-1];
 			
 			// Traverse through list, add everything to list2 			   
-			for(int i = 0; i<list.length; i++) 
+			for(int i = 0; i<list2.length; i++) 
 			{
 				list2[i] = list[i];
 			}
@@ -243,6 +245,6 @@ public class SimpleList
 	// return the last index of the array
 	public int lastIndex() 
 	{
-		return list[9];
+		return list[list.length-1];
 	}
 }
