@@ -42,17 +42,21 @@ public class SimpleList
 		if(count >= 10) 
 		{
 			track = true; 
+
+			if(count == list.length) 
+			{
+				// Set the size of arrayList
+				list2 = new int[list.length + list.length/2];
 			
-			// Set the size of arrayList
-			list2 = new int[list.length + list.length/2];
 				
-			// Traverse through list, add everything to list2 			   
-		    for(int i = 0; i<list.length; i++) 
-		    {
-		    	list2[i] = list[i];
-		    }
+				// Traverse through list, add everything to list2 			   
+				for(int i = 0; i<list.length; i++) 
+				{
+					list2[i] = list[i];
+				}
 		    
-		    
+			}
+			
 			// Now add something into the new array. 
 		    for(int i = list2.length-2; i >= 0; i--) 
 			{
